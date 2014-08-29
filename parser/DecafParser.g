@@ -17,7 +17,7 @@ options {
  *------------------------------------------------------------------*/
 
 
-start: brace1 (program | callout_decl | field_decl | method_decl | block | type | statement);
+start: (program | callout_decl | field_decl | method_decl | block | type | statement);
 
 program: (callout_decl)* (field_decl)* (method_decl)*;
 callout_decl: CALLOUT (id) PUNTOYCOMA;
@@ -64,7 +64,7 @@ alpha: ALPHA;
 
 digit: ENTEROS;
 
-hex_digit: (digit) | (('a' .. 'f') | ('A' .. 'F')); 
+hex_digit: digit | (('a'..'f') | ('A'..'F')); 
 
 int_literal: (decimal_literal) | (hex_literal);
 
@@ -72,7 +72,7 @@ decimal_literal: (digit) (digit)*;
 
 hex_literal: HEX;
 
-boo_literal: BOOLEANS;
+bool_literal: BOOLEANS;
 
 char_literal: CHAR;
 
