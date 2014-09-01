@@ -1,4 +1,1 @@
-class Program {
-  int i[];	// missing array size
-}
-
+int i[];	// missing array size

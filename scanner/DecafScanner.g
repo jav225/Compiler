@@ -48,7 +48,10 @@ CALLOUT: 'callout';
 CONTINUE: 'continue';
 ELSE: 'else';
 
+//COMENTARIOS
+COMMENT: '//'.+'/n' ->skip;
 
+AF: [a-fA-F];
 COMA: ',';
 COLON: ':';
 SEMICOLON: ';';

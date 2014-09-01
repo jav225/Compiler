@@ -12,8 +12,11 @@ import compiler.parser.CC4Parser;
 public class Compiler{
 	public static void main(String[] args) throws Exception{
 		if (args.length>0){
+			//if(args[ )
 			String filename = args[args.length-1];
-			String fileout="2"+filename;
+			String fileout="Copy"+filename;
+
+			
 			ArrayList<String> options = new ArrayList<String>();
 			if (args.length==1){
 				if(args[0].equals("-h")){
@@ -32,7 +35,7 @@ public class Compiler{
 					}
 					Printer out = new Printer(fileout);
 					out.close();
-					Codegen c = new Codegen(fileout);
+					Codegen c = new Codegen(fileout, filename);
 				}else{
 					ErrorHandler e = new ErrorHandler("not existing file");
 				}
@@ -124,6 +127,7 @@ public class Compiler{
 				}				
 			}
 			for(int j = 0; options.size()>j;j++){
+				if(options.size()>= 2)
 				switch(options.get(options.size()-2)){
 					case "-target":
 						System.out.println("se procedera hasta: " + options.get(j));
@@ -134,8 +138,8 @@ public class Compiler{
 										} catch (FileNotFoundException p) {
 								    		ErrorHandler error = new ErrorHandler("not existing file");
 										}
-										Printer outs = new Printer("flag");
-										Scanner s = new Scanner(outs);
+										Printer outs = new Printer(fileout,"flag");
+										Scanner s = new Scanner(outs,filename);
 										break;
 									case "parser":
 										try{
@@ -144,7 +148,7 @@ public class Compiler{
 								    		ErrorHandler error = new ErrorHandler("not existing file");
 										}
 										Printer outpa = new Printer(fileout,"flag");
-										CC4Parser sp = new CC4Parser(outpa);
+										CC4Parser sp = new CC4Parser(outpa,filename);
 										break;
 									case "ast":
 										try{
@@ -153,7 +157,7 @@ public class Compiler{
 								    		ErrorHandler error = new ErrorHandler("not existing file");
 										}
 										Printer outas = new Printer(fileout, "flag");
-										Ast a = new Ast(outas);
+										Ast a = new Ast(outas,filename);
 										break; 
 									case "semantic":
 										try{
@@ -162,7 +166,7 @@ public class Compiler{
 								    		ErrorHandler error = new ErrorHandler("not existing file");
 										}
 										Printer outse = new Printer(fileout, "flag");
-										Semantic ss = new Semantic(outse);
+										Semantic ss = new Semantic(outse,filename);
 										break;
 									case "irt":
 										try{
@@ -171,7 +175,7 @@ public class Compiler{
 								    		ErrorHandler error = new ErrorHandler("not existing file");
 										}
 										Printer outi = new Printer(fileout, "flag");
-										Irt i = new Irt(outi);
+										Irt i = new Irt(outi,filename);
 										break;
 									case "codegen":
 										try{
@@ -179,7 +183,7 @@ public class Compiler{
 										} catch (FileNotFoundException p) {
 								    		ErrorHandler error = new ErrorHandler("not existing file");
 										}
-										Codegen cc = new Codegen(fileout);
+										Codegen cc = new Codegen(fileout,filename);
 										break;
 									default:
 									ErrorHandler e = new ErrorHandler("missing -target complement");
