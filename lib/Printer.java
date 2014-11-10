@@ -8,8 +8,13 @@ public class Printer {
 	public Printer(String name, String file) throws Exception{
 		out = new PrintWriter(new File(name));
 	}
-	public void print(String s){
-		out.write(s);
+	public void print(String s, boolean b){
+		if(!b){
+			out.write(s);
+		}else{
+			out.write(s);
+			System.out.println(s);
+		}
 	}
 	public void close(){
 		out.close();

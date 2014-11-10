@@ -5,8 +5,17 @@ import compiler.lib.Printer;
 import compiler.semantic.Semantic;
 public class Irt{
 	Semantic s;
-	public Irt(Printer out,String filename)throws Exception{
-		this.s = new Semantic(out,filename);
-		out.print("stage: semantic \n");
+	Printer out;
+	public Irt(Semantic s)throws Exception{
+		this.s = s;
+		this.out = s.getPrinter();
+		boolean d = s.isDebugON("irt");
+		out.print("stage: semantic \n",d);
+	}
+	public Printer getPrinter(){
+		return s.getPrinter();
+	}
+	public boolean isDebugON(String se){
+		return s.isDebugON(se);
 	}
 }

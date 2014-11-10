@@ -1,7 +1,7 @@
-// Generated from parser/DecafParser.g by ANTLR 4.4
+// Generated from parser\DecafParser.g by ANTLR 4.4
 
   package compiler.parser;
-  import compiler.lib.Printer;
+  import java.util.*;
 
 
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -20,241 +20,277 @@ public class DecafParserBaseListener implements DecafParserListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterLocation(@NotNull DecafParser.LocationContext ctx) { }
+	@Override public void enterTipo(@NotNull DecafParser.TipoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitLocation(@NotNull DecafParser.LocationContext ctx) { }
+	@Override public void exitTipo(@NotNull DecafParser.TipoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterBlock(@NotNull DecafParser.BlockContext ctx) { }
+	@Override public void enterSfor(@NotNull DecafParser.SforContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitBlock(@NotNull DecafParser.BlockContext ctx) { }
+	@Override public void exitSfor(@NotNull DecafParser.SforContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExpr(@NotNull DecafParser.ExprContext ctx) { }
+	@Override public void enterFieldDec(@NotNull DecafParser.FieldDecContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExpr(@NotNull DecafParser.ExprContext ctx) { }
+	@Override public void exitFieldDec(@NotNull DecafParser.FieldDecContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterBin_op(@NotNull DecafParser.Bin_opContext ctx) { }
+	@Override public void enterAsigna(@NotNull DecafParser.AsignaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitBin_op(@NotNull DecafParser.Bin_opContext ctx) { }
+	@Override public void exitAsigna(@NotNull DecafParser.AsignaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterType(@NotNull DecafParser.TypeContext ctx) { }
+	@Override public void enterExpLoc(@NotNull DecafParser.ExpLocContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitType(@NotNull DecafParser.TypeContext ctx) { }
+	@Override public void exitExpLoc(@NotNull DecafParser.ExpLocContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterDecimal_literal(@NotNull DecafParser.Decimal_literalContext ctx) { }
+	@Override public void enterExpSub(@NotNull DecafParser.ExpSubContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitDecimal_literal(@NotNull DecafParser.Decimal_literalContext ctx) { }
+	@Override public void exitExpSub(@NotNull DecafParser.ExpSubContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterRel_op(@NotNull DecafParser.Rel_opContext ctx) { }
+	@Override public void enterRelOP(@NotNull DecafParser.RelOPContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitRel_op(@NotNull DecafParser.Rel_opContext ctx) { }
+	@Override public void exitRelOP(@NotNull DecafParser.RelOPContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterId(@NotNull DecafParser.IdContext ctx) { }
+	@Override public void enterSif(@NotNull DecafParser.SifContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitId(@NotNull DecafParser.IdContext ctx) { }
+	@Override public void exitSif(@NotNull DecafParser.SifContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCallout_decl(@NotNull DecafParser.Callout_declContext ctx) { }
+	@Override public void enterExpLit(@NotNull DecafParser.ExpLitContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCallout_decl(@NotNull DecafParser.Callout_declContext ctx) { }
+	@Override public void exitExpLit(@NotNull DecafParser.ExpLitContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterBool_literal(@NotNull DecafParser.Bool_literalContext ctx) { }
+	@Override public void enterAssingOP(@NotNull DecafParser.AssingOPContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitBool_literal(@NotNull DecafParser.Bool_literalContext ctx) { }
+	@Override public void exitAssingOP(@NotNull DecafParser.AssingOPContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCallout_arg(@NotNull DecafParser.Callout_argContext ctx) { }
+	@Override public void enterLit(@NotNull DecafParser.LitContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCallout_arg(@NotNull DecafParser.Callout_argContext ctx) { }
+	@Override public void exitLit(@NotNull DecafParser.LitContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAlpha(@NotNull DecafParser.AlphaContext ctx) { }
+	@Override public void enterDecLit(@NotNull DecafParser.DecLitContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAlpha(@NotNull DecafParser.AlphaContext ctx) { }
+	@Override public void exitDecLit(@NotNull DecafParser.DecLitContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterMethod_call(@NotNull DecafParser.Method_callContext ctx) { }
+	@Override public void enterIntLit(@NotNull DecafParser.IntLitContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitMethod_call(@NotNull DecafParser.Method_callContext ctx) { }
+	@Override public void exitIntLit(@NotNull DecafParser.IntLitContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCond_op(@NotNull DecafParser.Cond_opContext ctx) { }
+	@Override public void enterSreturn(@NotNull DecafParser.SreturnContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCond_op(@NotNull DecafParser.Cond_opContext ctx) { }
+	@Override public void exitSreturn(@NotNull DecafParser.SreturnContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterInt_literal(@NotNull DecafParser.Int_literalContext ctx) { }
+	@Override public void enterMetodo(@NotNull DecafParser.MetodoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitInt_literal(@NotNull DecafParser.Int_literalContext ctx) { }
+	@Override public void exitMetodo(@NotNull DecafParser.MetodoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterMethod_name(@NotNull DecafParser.Method_nameContext ctx) { }
+	@Override public void enterBloque(@NotNull DecafParser.BloqueContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitMethod_name(@NotNull DecafParser.Method_nameContext ctx) { }
+	@Override public void exitBloque(@NotNull DecafParser.BloqueContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterChar_literal(@NotNull DecafParser.Char_literalContext ctx) { }
+	@Override public void enterExplLit(@NotNull DecafParser.ExplLitContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitChar_literal(@NotNull DecafParser.Char_literalContext ctx) { }
+	@Override public void exitExplLit(@NotNull DecafParser.ExplLitContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterDigit(@NotNull DecafParser.DigitContext ctx) { }
+	@Override public void enterExpMeth(@NotNull DecafParser.ExpMethContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitDigit(@NotNull DecafParser.DigitContext ctx) { }
+	@Override public void exitExpMeth(@NotNull DecafParser.ExpMethContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterStatement(@NotNull DecafParser.StatementContext ctx) { }
+	@Override public void enterLocacion(@NotNull DecafParser.LocacionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitStatement(@NotNull DecafParser.StatementContext ctx) { }
+	@Override public void exitLocacion(@NotNull DecafParser.LocacionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterArith_op(@NotNull DecafParser.Arith_opContext ctx) { }
+	@Override public void enterEqOP(@NotNull DecafParser.EqOPContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitArith_op(@NotNull DecafParser.Arith_opContext ctx) { }
+	@Override public void exitEqOP(@NotNull DecafParser.EqOPContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSwhile(@NotNull DecafParser.SwhileContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSwhile(@NotNull DecafParser.SwhileContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExplLoc(@NotNull DecafParser.ExplLocContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExplLoc(@NotNull DecafParser.ExplLocContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExplSub(@NotNull DecafParser.ExplSubContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExplSub(@NotNull DecafParser.ExplSubContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -272,133 +308,181 @@ public class DecafParserBaseListener implements DecafParserListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExpleft(@NotNull DecafParser.ExpleftContext ctx) { }
+	@Override public void enterCallArg(@NotNull DecafParser.CallArgContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExpleft(@NotNull DecafParser.ExpleftContext ctx) { }
+	@Override public void exitCallArg(@NotNull DecafParser.CallArgContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterProgram(@NotNull DecafParser.ProgramContext ctx) { }
+	@Override public void enterExplMeth(@NotNull DecafParser.ExplMethContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitProgram(@NotNull DecafParser.ProgramContext ctx) { }
+	@Override public void exitExplMeth(@NotNull DecafParser.ExplMethContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterEq_op(@NotNull DecafParser.Eq_opContext ctx) { }
+	@Override public void enterProg(@NotNull DecafParser.ProgContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitEq_op(@NotNull DecafParser.Eq_opContext ctx) { }
+	@Override public void exitProg(@NotNull DecafParser.ProgContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterField_decl(@NotNull DecafParser.Field_declContext ctx) { }
+	@Override public void enterMethodDec(@NotNull DecafParser.MethodDecContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitField_decl(@NotNull DecafParser.Field_declContext ctx) { }
+	@Override public void exitMethodDec(@NotNull DecafParser.MethodDecContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterHex_literal(@NotNull DecafParser.Hex_literalContext ctx) { }
+	@Override public void enterArithOP(@NotNull DecafParser.ArithOPContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitHex_literal(@NotNull DecafParser.Hex_literalContext ctx) { }
+	@Override public void exitArithOP(@NotNull DecafParser.ArithOPContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAlpha_num(@NotNull DecafParser.Alpha_numContext ctx) { }
+	@Override public void enterExpParent(@NotNull DecafParser.ExpParentContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAlpha_num(@NotNull DecafParser.Alpha_numContext ctx) { }
+	@Override public void exitExpParent(@NotNull DecafParser.ExpParentContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterString_literal(@NotNull DecafParser.String_literalContext ctx) { }
+	@Override public void enterScontinue(@NotNull DecafParser.ScontinueContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitString_literal(@NotNull DecafParser.String_literalContext ctx) { }
+	@Override public void exitScontinue(@NotNull DecafParser.ScontinueContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterHex_digit(@NotNull DecafParser.Hex_digitContext ctx) { }
+	@Override public void enterCalloutDec(@NotNull DecafParser.CalloutDecContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitHex_digit(@NotNull DecafParser.Hex_digitContext ctx) { }
+	@Override public void exitCalloutDec(@NotNull DecafParser.CalloutDecContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAssign_op(@NotNull DecafParser.Assign_opContext ctx) { }
+	@Override public void enterExpOP(@NotNull DecafParser.ExpOPContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAssign_op(@NotNull DecafParser.Assign_opContext ctx) { }
+	@Override public void exitExpOP(@NotNull DecafParser.ExpOPContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterMethod_decl(@NotNull DecafParser.Method_declContext ctx) { }
+	@Override public void enterExpNo(@NotNull DecafParser.ExpNoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitMethod_decl(@NotNull DecafParser.Method_declContext ctx) { }
+	@Override public void exitExpNo(@NotNull DecafParser.ExpNoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterLiteral(@NotNull DecafParser.LiteralContext ctx) { }
+	@Override public void enterExplNo(@NotNull DecafParser.ExplNoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitLiteral(@NotNull DecafParser.LiteralContext ctx) { }
+	@Override public void exitExplNo(@NotNull DecafParser.ExplNoContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExplParent(@NotNull DecafParser.ExplParentContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExplParent(@NotNull DecafParser.ExplParentContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterCondOP(@NotNull DecafParser.CondOPContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCondOP(@NotNull DecafParser.CondOPContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterBinOP(@NotNull DecafParser.BinOPContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitBinOP(@NotNull DecafParser.BinOPContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterMethodCall(@NotNull DecafParser.MethodCallContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMethodCall(@NotNull DecafParser.MethodCallContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

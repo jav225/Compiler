@@ -3,6 +3,8 @@ import java.io.*;
 import compiler.lib.*;
 import compiler.scanner.Scanner;
 
+import compiler.lib.Printer;
+
 import compiler.ast.Ast;
 import compiler.semantic.Semantic;
 import compiler.irt.Irt;
@@ -12,10 +14,12 @@ import compiler.parser.CC4Parser;
 public class Compiler{
 	public static void main(String[] args) throws Exception{
 		if (args.length>0){
-			//if(args[ )
+			
 			String filename = args[args.length-1];
 			String fileout="Copy"+filename;
-
+			//boolean debug = false;
+			String sdebug = "";
+			
 			
 			ArrayList<String> options = new ArrayList<String>();
 			if (args.length==1){
@@ -28,14 +32,14 @@ public class Compiler{
 					System.exit(0);
 				}
 				if(args[0].contains(".")){
-					try{
-						InputStream in = new FileInputStream(filename);
-					} catch (FileNotFoundException p) {
-			    		ErrorHandler error = new ErrorHandler("not existing file");
-					}
 					Printer out = new Printer(fileout);
+					Scanner sc = new Scanner(out,filename,sdebug);
+					CC4Parser pa = new CC4Parser(sc);
+					Ast as = new Ast(pa);
+					Semantic sem = new Semantic(as);
+					Irt ir = new Irt(sem);
+					Codegen code = new Codegen(ir);
 					out.close();
-					Codegen c = new Codegen(fileout, filename);
 				}else{
 					ErrorHandler e = new ErrorHandler("not existing file");
 				}
@@ -115,7 +119,7 @@ public class Compiler{
 							if(args[i+1].charAt(0)=='-' || args[i+1].contains(".")){
 								ErrorHandler e = new ErrorHandler("missing -debug complement");
 							}else{
-								options.add(args[i+1]);
+								sdebug=args[i+1];
 								i++;
 							}
 						}else{
@@ -130,60 +134,46 @@ public class Compiler{
 				if(options.size()>= 2)
 				switch(options.get(options.size()-2)){
 					case "-target":
-						System.out.println("se procedera hasta: " + options.get(j));
+						Printer out = new Printer(fileout);
 						switch(options.get(j)){
 									case "scan":
-										try{
-											InputStream in = new FileInputStream(filename);
-										} catch (FileNotFoundException p) {
-								    		ErrorHandler error = new ErrorHandler("not existing file");
-										}
-										Printer outs = new Printer(fileout,"flag");
-										Scanner s = new Scanner(outs,filename);
+										Scanner s = new Scanner(out,filename,sdebug);
+										out.close();
 										break;
 									case "parser":
-										try{
-											InputStream in = new FileInputStream(filename);
-										} catch (FileNotFoundException p) {
-								    		ErrorHandler error = new ErrorHandler("not existing file");
-										}
-										Printer outpa = new Printer(fileout,"flag");
-										CC4Parser sp = new CC4Parser(outpa,filename);
+										Scanner sp = new Scanner(out,filename,sdebug);
+										CC4Parser pp = new CC4Parser(sp);
+										out.close();
 										break;
 									case "ast":
-										try{
-											InputStream in = new FileInputStream(filename);
-										} catch (FileNotFoundException p) {
-								    		ErrorHandler error = new ErrorHandler("not existing file");
-										}
-										Printer outas = new Printer(fileout, "flag");
-										Ast a = new Ast(outas,filename);
+										Scanner sa = new Scanner(out,filename,sdebug);
+										CC4Parser pa = new CC4Parser(sa);
+										Ast aa = new Ast(pa);
+										out.close();
 										break; 
 									case "semantic":
-										try{
-											InputStream in = new FileInputStream(filename);
-										} catch (FileNotFoundException p) {
-								    		ErrorHandler error = new ErrorHandler("not existing file");
-										}
-										Printer outse = new Printer(fileout, "flag");
-										Semantic ss = new Semantic(outse,filename);
+										Scanner ss = new Scanner(out,filename,sdebug);
+										CC4Parser ps = new CC4Parser(ss);
+										Ast as = new Ast(ps);
+										Semantic ses = new Semantic(as);
+										out.close();
 										break;
 									case "irt":
-										try{
-											InputStream in = new FileInputStream(filename);
-										} catch (FileNotFoundException p) {
-								    		ErrorHandler error = new ErrorHandler("not existing file");
-										}
-										Printer outi = new Printer(fileout, "flag");
-										Irt i = new Irt(outi,filename);
+										Scanner si = new Scanner(out,filename,sdebug);
+										CC4Parser pi = new CC4Parser(si);
+										Ast ai = new Ast(pi);
+										Semantic sei = new Semantic(ai);
+										Irt ii = new Irt(sei);
+										out.close();
 										break;
 									case "codegen":
-										try{
-											InputStream in = new FileInputStream(filename);
-										} catch (FileNotFoundException p) {
-								    		ErrorHandler error = new ErrorHandler("not existing file");
-										}
-										Codegen cc = new Codegen(fileout,filename);
+										Scanner sc = new Scanner(out,filename,sdebug);
+										CC4Parser pc = new CC4Parser(sc);
+										Ast ac = new Ast(pc);
+										Semantic sec = new Semantic(ac);
+										Irt ic = new Irt(sec);
+										Codegen cc = new Codegen(ic);
+										out.close();
 										break;
 									default:
 									ErrorHandler e = new ErrorHandler("missing -target complement");
@@ -193,11 +183,13 @@ public class Compiler{
 					case "-opt":
 						System.out.println("solo se optimizara: "+ options.get(j));
 						break;
-					case "-debug":
-						System.out.println("se debugueara: "+ options.get(j));
-						break;
 					case "-h":
-						System.out.println("Muestra esta ayuda al usuario.");
+						System.out.println("Esta es una ayuda para el usuario, opciones disponibles: ");
+						System.out.println("-o");
+						System.out.println("-target");
+						System.out.println("-opt");
+						System.out.println("-debug");
+						System.exit(0);
 						break;
 					default:
 						break;

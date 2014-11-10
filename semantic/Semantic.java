@@ -5,8 +5,17 @@ import compiler.lib.Printer;
 import compiler.ast.Ast;
 public class Semantic{
 	Ast a;
-	public Semantic(Printer out,String filename)throws Exception{
-		this.a = new Ast(out,filename);
-		out.print("stage: Ast \n");
+	Printer out;
+	public Semantic(Ast a)throws Exception{
+		this.a = a;
+		this.out = a.getPrinter();
+		boolean d = a.isDebugON("semantic");
+		out.print("stage: Ast \n",d);
+	}
+	public Printer getPrinter(){
+		return a.getPrinter();
+	}
+	public boolean isDebugON(String s){
+		return a.isDebugON(s);
 	}
 }

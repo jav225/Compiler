@@ -6,10 +6,11 @@ import compiler.irt.Irt;
 import compiler.lib.Printer;
 public class Codegen{
 	Irt i ;
-	public Codegen(String name, String filename)throws Exception{
-		Printer out = new Printer(name, "flag");
-		this.i = new Irt(out,filename);
-		out.print("stage: generating code");
-		out.close();
+	Printer out;
+	public Codegen(Irt i)throws Exception{
+		this.i = i;
+		this.out = i.getPrinter();
+		boolean d=i.isDebugON("codegen");
+		out.print("stage: generating code",d);
 	}
 }

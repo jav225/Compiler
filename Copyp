@@ -1,0 +1,32 @@
+stage: ast 
+INT
+ID
+PARENTESIS
+PARENTESIS2
+BRACE
+INT
+ID
+SEMICOLON
+ID
+EQ
+ENTEROS
+SEMICOLON
+BRACE2
+
+stage: parsing 
+visited: type
+visited: type
+visited: field_decl
+visited: location
+visited: assign_op
+visited: decimal_literal
+visited: int_literal
+visited: literal
+visited: expr
+visited: statement
+visited: block
+visited: method_decl
+visited: program
+visited: start
+stage: ast 
+ROOT	int		main		Block			int				x			=				x				1
