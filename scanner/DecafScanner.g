@@ -5,7 +5,7 @@ lexer grammar DecafScanner;
 }
 
 
-
+ 
 WS 			:	(' ') -> skip;
 NL 			:	('\n') -> skip;
 TAB 		:	('\t') -> skip;
