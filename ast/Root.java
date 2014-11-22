@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.LinkedList;
 
 public class Root extends Node{
-	LinkedList<Node> list;
+	public LinkedList<Node> list;
 	public Root(){
 		this.list = new LinkedList<Node>();
 	}

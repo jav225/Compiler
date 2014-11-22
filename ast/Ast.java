@@ -6,13 +6,14 @@ import compiler.parser.CC4Parser;
 public class Ast{
 	CC4Parser c;
 	Printer out;
+	Root root;
 	public Ast(CC4Parser c)throws Exception{
 		this.c = c;
 		this.out = c.getPrinter();
 		boolean d= c.isDebugON("ast");
 		
 		AstVisitor visitor = new AstVisitor();
-  		Root root = (Root)visitor.visit(c.getTree());
+  		this.root = (Root)visitor.visit(c.getTree());
   		
 		out.print("stage: ast \n",d);
 		root.print(d,out);
@@ -23,5 +24,8 @@ public class Ast{
 	}
 	public boolean isDebugON(String s){
 		return c.isDebugON(s);
+	}
+	public Root getRoot(){
+		return root;
 	}
 }

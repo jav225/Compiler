@@ -6,4 +6,7 @@ public class Args{
 		this.type = type;
 		this.name = name;
 	}
+	public String toString(){
+		return type + "\t" + name;
+	}
 }

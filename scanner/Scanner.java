@@ -18,7 +18,7 @@ public class Scanner{
 		this.debug = debug;
 		boolean d = this.isDebugON("scann");
 		
-		out.print("stage: ast \n",d);
+		out.print("stage: Scanner \n",d);
 		try{
 		    scann = new DecafScanner(new ANTLRFileStream(filename));
 		    Token t;

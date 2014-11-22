@@ -1,5 +1,4 @@
-int main() {
-
-	int x;   
-	x = 1;
+int foo() {
+	int  x; 
+	x = 2+(3*5);
 }

@@ -1,4 +1,4 @@
-stage: ast 
+stage: Scanner 
 INT
 ID
 PARENTESIS
@@ -10,6 +10,12 @@ SEMICOLON
 ID
 EQ
 ENTEROS
+PLUS
+PARENTESIS
+ENTEROS
+MULT
+ENTEROS
+PARENTESIS2
 SEMICOLON
 BRACE2
 
@@ -22,6 +28,21 @@ visited: assign_op
 visited: decimal_literal
 visited: int_literal
 visited: literal
+visited: expleft
+visited: arith_op
+visited: bin_op
+visited: decimal_literal
+visited: int_literal
+visited: literal
+visited: expleft
+visited: arith_op
+visited: bin_op
+visited: decimal_literal
+visited: int_literal
+visited: literal
+visited: expr
+visited: expr
+visited: expr
 visited: expr
 visited: statement
 visited: block
@@ -29,4 +50,9 @@ visited: method_decl
 visited: program
 visited: start
 stage: ast 
-ROOT	int		main		Block			int				x			=				x				1
+ROOT	int		foo		Block			int				x			=				x				+					2					(					*						3						5					)stage: Semantic 
+debe existir un metodo main
+ Name: RootParent: Null 
+foo:VOID
+ Name: fooParent: Root
+x:int

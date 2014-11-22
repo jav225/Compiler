@@ -4,7 +4,7 @@ import java.util.LinkedList;
 public class ExpS extends Node{
 	public Node exp;
 	public String s;
-	public ExpS(Node binop, String s){
+	public ExpS(Node exp, String s){
 		this.s = s;
 		this.exp = exp;
 	}
@@ -13,7 +13,6 @@ public class ExpS extends Node{
 		switch (s) {
 			case "-":
 				out.print(padding+"-",b);
-				System.out.print(padding+"-");
 				exp.print(padding,b,out);
 			break;
 			case "!":
